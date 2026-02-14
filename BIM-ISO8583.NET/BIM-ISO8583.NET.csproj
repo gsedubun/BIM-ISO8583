@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>BIM_ISO8583.NET</RootNamespace>
     <AssemblyName>BIM-ISO8583.NET</AssemblyName>
     <ImplicitUsings>enable</ImplicitUsings>

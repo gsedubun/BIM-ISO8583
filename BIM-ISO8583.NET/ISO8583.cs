@@ -61,7 +61,7 @@ namespace BIM_ISO8583.NET
             DEFixLen[98] = -25; DEFixLen[101] = -17; DEFixLen[128] = -16;
 
         }
-        public string Build(string[] DE, string MTI)
+        public string Build(string?[] DE, string MTI)
         {
             string newISO = MTI;
 
@@ -100,21 +100,21 @@ namespace BIM_ISO8583.NET
 
                         if (DEFixLen[I] < 0)
                         {
-                            string BMPadded = DE[I].PadRight(Math.Abs(DEFixLen[I]), ' ');
+                            string BMPadded = DE[I]!.PadRight(Math.Abs(DEFixLen[I]), ' ');
                             string sBM = BMPadded.Substring(0, Math.Abs(DEFixLen[I]));
 
                             newISO += sBM;
                         }
                         else
                         {
-                            string BMPadded = DE[I].PadLeft(DEFixLen[I], '0');
+                            string BMPadded = DE[I]!.PadLeft(DEFixLen[I], '0');
                             string sBM = BMPadded.Substring(BMPadded.Length - Math.Abs(DEFixLen[I]), Math.Abs(DEFixLen[I]));
                             newISO += sBM;
                         }   
                     }
                     else
                     {
-                        string li = DE[I].Length.ToString();
+                        string li = DE[I]!.Length.ToString();
                         string paddedli = li.PadLeft(DEVarLen[I], '0');
                         newISO += (paddedli + DE[I]);
                     }
